@@ -1,17 +1,43 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import react from "react";
+import ReactDOM from "react-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// se captura a donde queremos que se nos muestre nuestro app , capturando por Id y guardandolo en una variable
+const rootElement = document.getElementById("root");
+
+// se ejecuta en react pabn ra que reconozca el root y se guarda en una sola variable
+const root = ReactDOM.createRoot(rootElement);
+
+function Saludo() {
+  // se utuliza mucho mucho el tema de los true o false
+  const condicional = false;
+
+  //   esto es un objeto en react
+  const user = {
+    nombre: "Diego ",
+    apellido: "Arenas",
+  };
+  //   JSON.stringify(user) -> convierte a objetos en una cadena de texto
+  return (
+    <div>
+      <h1> {JSON.stringify(user)} </h1>
+    </div>
+  );
+  
+  //   if (condicional) {
+  //     return <h1>Entra</h1>;
+  //   } else {
+  //     return <h1>NOOOO Entra</h1>;
+  //    }
+  // esta es una manera larga de poner las condicionales
+
+  //   mejor manera
+  //   return <h1>{condicional ? "entra  " : "No entra"}</h1>;
+
+  //   con {} me interpreta valores en variables tipo para concatenar
+}
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <>
+    <Saludo />
+  </>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// render()== espera elementos hijo, espera elementos Html
