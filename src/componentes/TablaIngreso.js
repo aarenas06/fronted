@@ -1,3 +1,0 @@
-function TablaIngrso() {
-  <div></div>;
-}
